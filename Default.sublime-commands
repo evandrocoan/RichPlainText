@@ -1,3 +1,4 @@
 [
 	{ "caption": "Rich Plain Text: Force Insert Tab", "command": "rich_plain_text_force_insert_tab" },
+	{ "caption": "Rich Plain Text: Force Insert New Line", "command": "rich_plain_text_force_insert_newline" },
 ]

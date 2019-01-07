@@ -19,3 +19,18 @@ class RichPlainTextForceInsertTabCommand(sublime_plugin.TextCommand):
 
         if translate_tabs_to_spaces: settings.set('translate_tabs_to_spaces', True)
 
+
+class RichPlainTextForceInsertNewlineCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        view = self.view
+        settings = view.settings()
+
+        auto_indent = settings.get('auto_indent', True)
+        if auto_indent: settings.set('auto_indent', False)
+
+        for selection in view.sel():
+            view.insert(edit, selection.a, '\n')
+
+        if auto_indent: settings.set('auto_indent', True)
+
